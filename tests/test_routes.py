@@ -26,6 +26,7 @@ HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
 #  T E S T   C A S E S
 ######################################################################
 
+
 class TestAccountService(TestCase):
     """Account Service Tests"""
 
@@ -136,7 +137,7 @@ class TestAccountService(TestCase):
         )
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         data = resp.get_json()
-        self.assertEqual(data["name"], account.name)   
+        self.assertEqual(data["name"], account.name)
 
     def test_get_account_not_found(self):
         """It should not Read an Account that is not found"""
@@ -183,4 +184,4 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         # Controlla l'intestazione CORS
         self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
- 
+  
