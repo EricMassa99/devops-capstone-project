@@ -184,4 +184,4 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         # Controlla l'intestazione CORS
         self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
-  
+        
